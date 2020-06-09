@@ -1,13 +1,25 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+require('dotenv').config({ path: './.env' });
 
 const app = express();
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb+srv://probeta:poAtlNn5eHH2Mq1B@cluster0-hsbmq.gcp.mongodb.net/users?retryWrites=true&w=majority",{useNewUrlParser: true});
+mongoose.connect(process.env.REACT_APP_API_KEY,{useNewUrlParser: true});
 
 app.use(bodyParser.json());
+
+//production env config
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+
+  const path = require('path');
+  app.get('*', (req,res) => {
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  })
+
+}
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
