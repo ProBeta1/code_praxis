@@ -13,3 +13,5 @@
 - MERN
 - Tailwind CSS
 - Google auth
+
+#### Authentication is currently enabled for GSuite users of IIITL 

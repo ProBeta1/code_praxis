@@ -18,7 +18,7 @@ function Login() {
       <div>
         <div className="flex justify-center items-center h-64">
           <GoogleLogin
-            clientId="368121245271-ol8fkc5kvtto2usefaj7relvljqspkh2.apps.googleusercontent.com"
+            clientId="338486217645-vhhggu1fnon448pu9iqick4bor3q3sq5.apps.googleusercontent.com"
             buttonText="Login to Code Praxis"
             onSuccess={responseGoogle}
             onFailure={responseGoogle}
