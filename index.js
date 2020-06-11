@@ -3,12 +3,18 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 require('dotenv').config({ path: './.env' });
 
+
+require("./models/Problem");
+
 const app = express();
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.REACT_APP_API_KEY,{useNewUrlParser: true});
+mongoose.connect(process.env.REACT_APP_API_KEY,{useNewUrlParser: true, useUnifiedTopology: true});
 
 app.use(bodyParser.json());
+
+require("./routes/problemRoutes")(app);
+
 
 //production env config
 if (process.env.NODE_ENV === 'production') {

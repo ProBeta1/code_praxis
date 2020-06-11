@@ -1,14 +1,14 @@
-import React from "react";
-import { Switch, BrowserRouter as Router } from "react-router-dom";
-import Login from "./components/Login";
-import Dashboard from "./components/Dashboard";
+import React, { useState,useEffect } from 'react'
+import Home from "./pages/Home";
+import Login from './pages/Login';
 
 function App() {
+
   return (
-    <div className="App">
-      <Login />
+    <div>
+      <Home/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
