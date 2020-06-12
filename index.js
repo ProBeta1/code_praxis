@@ -5,6 +5,7 @@ require('dotenv').config({ path: './.env' });
 
 
 require("./models/Problem");
+require("./models/Dp");
 
 const app = express();
 
@@ -13,7 +14,9 @@ mongoose.connect(process.env.REACT_APP_API_KEY,{useNewUrlParser: true, useUnifie
 
 app.use(bodyParser.json());
 
+// require the routes
 require("./routes/problemRoutes")(app);
+require("./routes/dpRoutes")(app);
 
 
 //production env config

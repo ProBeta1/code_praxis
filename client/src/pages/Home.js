@@ -1,9 +1,9 @@
 import React from "react";
 import { Link, Switch, Route } from "react-router-dom";
-import Login from "./Login";
 import ProblemSet from "./ProblemSet"
 import UserDetail from "../components/UserDetail";
 import CodeDuel from "./CodeDuel";
+import Discuss from "./Discuss";
 import AllProblems from "./AllProblems";
 import Bookmark from "./Bookmark";
 function Home() {
@@ -16,6 +16,7 @@ function Home() {
         <Link className="bg-gray-700 inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-300 font-semibold" to="/duel">Code Duel</Link>
         <Link className="bg-gray-700 inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-300 font-semibold" to="/all">All Problems</Link>
         <Link className="bg-gray-700 inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-300 font-semibold" to="/bookmark">BookMark</Link>
+        <Link className="bg-gray-700 inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-300 font-semibold" to="/discuss">Discuss</Link>
       </nav>
 
       <Switch>
@@ -33,8 +34,11 @@ function Home() {
         <Route exact path="/all">
           <AllProblems/>
         </Route>
-        <Route exact path="/all">
+        <Route exact path="/bookmark">
           <Bookmark/>
+        </Route>
+        <Route exact path="/discuss">
+          <Discuss/>
         </Route>
       </Switch>
 

@@ -12,6 +12,14 @@
 
 - MERN
 - Tailwind CSS
-- Google auth
+- Firebase 
 
-#### Authentication is currently enabled for GSuite users of IIITL 
+## App for now is customised to just post problems
+
+## Steps to add new Problems to DB
+
+- Create the model like models/Dp.js
+- Create routes like routes/dpRoutes.js
+- Include them in root file index.js
+- Create a service in client like services/postDpProblem.js
+- Make corresponding changes in pages/PostTheProblems.js
