@@ -4,8 +4,13 @@ const bodyParser = require('body-parser');
 require('dotenv').config({ path: './.env' });
 
 
+require("./models/users");
 require("./models/Problem");
 require("./models/Dp");
+require("./models/data_structures");
+require("./models/greedy");
+require("./models/hashing");
+require("./models/strings");
 
 const app = express();
 
@@ -17,6 +22,10 @@ app.use(bodyParser.json());
 // require the routes
 require("./routes/problemRoutes")(app);
 require("./routes/dpRoutes")(app);
+require("./routes/data_structuresRoutes")(app);
+require("./routes/greedyRoutes")(app);
+require("./routes/hashingRoutes")(app);
+require("./routes/stringsRoutes")(app);
 
 
 //production env config
