@@ -11,7 +11,7 @@ import { auth } from "./services/firebase";
 import CFRegister from "./pages/CFRegister";
 import CodeDuel from "./pages/CodeDuel";
 import Nav from "./components/Nav";
-import UserDetail from "./components/UserDetail";
+import UserDetail from "./pages/UserDetail";
 import AllProblems from "./pages/AllProblems";
 import ProblemSet from "./pages/ProblemSet";
 import Bookmark from "./pages/Bookmark";

@@ -55,6 +55,7 @@ require("./routes/greedyRoutes")(app);
 require("./routes/hashingRoutes")(app);
 require("./routes/stringsRoutes")(app);
 require("./routes/satRoutes")(app);
+require("./routes/userRoutes")(app);
 
 
 //production env config
