@@ -1,3 +1,10 @@
+### App is working now , try logging with a Google account and posting some on Discuss !
+
+## Todos --
+- Store the user details on DB , by creating corresponding API and linking with handleSubmit button of CFRegister.js page
+- Query to recommend problems
+- Problem solving tracker on problems
+
 ## Installation instructions 
 
 - Fork this repo
@@ -14,7 +21,6 @@
 - Tailwind CSS
 - Firebase 
 
-## App for now is customised to just post problems
 
 ## Steps to add new Problems to DB
 
