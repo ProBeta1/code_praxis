@@ -5,11 +5,17 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import Home from "./pages/Home";
 import Discuss from "./pages/Discuss";
 import Signup from "./pages/Signup";
 import { auth } from "./services/firebase";
-import PostTheProblems from "./pages/PostTheProblems";
+import CFRegister from "./pages/CFRegister";
+import CodeDuel from "./pages/CodeDuel";
+import Nav from "./components/Nav";
+import UserDetail from "./components/UserDetail";
+import AllProblems from "./pages/AllProblems";
+import ProblemSet from "./pages/ProblemSet";
+import Bookmark from "./pages/Bookmark";
+import { withRouter } from "react-router-dom";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -27,29 +33,60 @@ function App() {
     });
   });
 
-  return (
+  const Main = withRouter(({ location }) => {
+    return (
+      <div>
+        {location.pathname !== "/" && <Nav />}
+        <Switch>
+          <PrivateRoute
+            path="/cfregister"
+            authenticated={authenticated}
+            component={CFRegister}
+          ></PrivateRoute>
+          <PrivateRoute
+            path="/duel"
+            authenticated={authenticated}
+            component={CodeDuel}
+          ></PrivateRoute>
+          <PrivateRoute
+            path="/dashboard"
+            authenticated={authenticated}
+            component={UserDetail}
+          ></PrivateRoute>
+          <PrivateRoute
+            path="/all"
+            authenticated={authenticated}
+            component={AllProblems}
+          ></PrivateRoute>
+          <PrivateRoute
+            path="/problems"
+            authenticated={authenticated}
+            component={ProblemSet}
+          ></PrivateRoute>
+          <PrivateRoute
+            path="/bookmark"
+            authenticated={authenticated}
+            component={Bookmark}
+          ></PrivateRoute>
+          <PrivateRoute
+            path="/discuss"
+            authenticated={authenticated}
+            component={Discuss}
+          ></PrivateRoute>
 
-    // made to just post problems on DB for now
-    <PostTheProblems/>
+          <PublicRoute
+            path="/"
+            authenticated={authenticated}
+            component={Signup}
+          ></PublicRoute>
+        </Switch>
+      </div>
+    );
+  });
 
-    // actual pages
-    
-    // <Router>
-    //   <Switch>
-    //     <Route exact path="/" component={Home}></Route>
-    //     <PrivateRoute
-    //       path="/discuss"
-    //       authenticated={authenticated}
-    //       component={Discuss}
-    //     ></PrivateRoute>
-    //     <PublicRoute
-    //       path="/login"
-    //       authenticated={authenticated}
-    //       component={Signup}
-    //     ></PublicRoute>
-    //   </Switch>
-    // </Router>
-  );
+  return <Router>
+    <Main/>
+  </Router>;
 }
 
 //HOC
@@ -61,9 +98,7 @@ function PrivateRoute({ component: Component, authenticated, ...rest }) {
         authenticated === true ? (
           <Component {...props} />
         ) : (
-          <Redirect
-            to={{ pathname: "/login", state: { from: props.location } }}
-          />
+          <Redirect to={{ pathname: "/", state: { from: props.location } }} />
         )
       }
     />
@@ -79,7 +114,7 @@ function PublicRoute({ component: Component, authenticated, ...rest }) {
         authenticated === false ? (
           <Component {...props} />
         ) : (
-          <Redirect to="/discuss" />
+          <Redirect to="/cfregister" />
         )
       }
     />
