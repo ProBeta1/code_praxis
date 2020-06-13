@@ -11,6 +11,34 @@ require("./models/data_structures");
 require("./models/greedy");
 require("./models/hashing");
 require("./models/strings");
+require("./models/sat");
+require("./models/bitmasks");
+require("./models/binary_search");
+require("./models/brute_force");
+require("./models/combinatorics");
+require("./models/constructive_algorithms");
+require("./models/dfs_and_similar");
+require("./models/divide_and_conquer");
+require("./models/dsu");
+require("./models/expression_parsing");
+require("./models/fft");
+require("./models/flows");
+require("./models/games");
+require("./models/geometry");
+require("./models/graph_matchings");
+require("./models/graphs");
+require("./models/implementation");
+require("./models/math");
+require("./models/matrices");
+require("./models/number_theory");
+require("./models/probabilities");
+require("./models/schedules");
+require("./models/shortest_paths");
+require("./models/sortings");
+require("./models/string_suffix_structures");
+require("./models/ternary_search");
+require("./models/trees");
+require("./models/two_pointers");
 
 const app = express();
 
@@ -26,6 +54,7 @@ require("./routes/data_structuresRoutes")(app);
 require("./routes/greedyRoutes")(app);
 require("./routes/hashingRoutes")(app);
 require("./routes/stringsRoutes")(app);
+require("./routes/satRoutes")(app);
 
 
 //production env config
