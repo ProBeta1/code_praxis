@@ -5,6 +5,11 @@ import one from "../images/1.gif";
 import two from "../images/2.gif";
 import three from "../images/3.gif";
 import four from "../images/4.gif";
+import five from "../images/5.gif";
+import six from "../images/6.gif";
+import seven from "../images/7.gif";
+import eight from "../images/8.gif";
+
 import '../assets/icheck-bootstrap.min.css';
 import '../assets/fontawesome-free/css/all.min.css';
 import '../assets/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css';
@@ -131,42 +136,42 @@ function ProblemSet(props) {
           href={"https://codeforces.com/problemset/problem/1365/G"}
           title={"Strings"}
           thumbnail={three}
-          description={"pr kyun"}
+          description={"STL may help maybe"}
           tags={["strings"]}
         /></Link>
         <Link to="/datastructuresset"><TaggedContentCard
           href={"https://codeforces.com/problemset/problem/1365/G"}
           title={"Greedy"}
           thumbnail={four}
-          description={"pr kyun"}
+          description={"Can you think about the best solution ?"}
           tags={["greedy"]}
         /></Link>
         <Link to="/datastructuresset"><TaggedContentCard
           href={"https://codeforces.com/problemset/problem/1365/G"}
           title={"Hashing"}
-          thumbnail={two}
-          description={"pr kyun"}
+          thumbnail={five}
+          description={"Map or what , try out"}
           tags={["hashing"]}
         /></Link>
         <Link to="/datastructuresset"><TaggedContentCard
           href={"https://codeforces.com/problemset/problem/1365/G"}
           title={"Implementation"}
-          thumbnail={two}
-          description={"pr kyun"}
-          tags={["implementation"]}
+          thumbnail={six}
+          description={"Adhoc always seem simpler than they actually are"}
+          tags={["implementation","adhoc"]}
         /></Link>
         <Link to="/datastructuresset"><TaggedContentCard
           href={"https://codeforces.com/problemset/problem/1365/G"}
           title={"Sortings"}
-          thumbnail={two}
-          description={"pr kyun"}
-          tags={["sortings"]}
+          thumbnail={seven}
+          description={"Can you solve it "}
+          tags={["sortings","searching"]}
         /></Link>
         <Link to="/datastructuresset"><TaggedContentCard
           href={"https://codeforces.com/problemset/problem/1365/G"}
           title={"Games"}
-          thumbnail={two}
-          description={"pr kyun"}
+          thumbnail={eight}
+          description={"Game Theory Challenges"}
           tags={["games"]}
         /></Link>
         
