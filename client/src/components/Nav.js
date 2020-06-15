@@ -4,11 +4,11 @@ import { Link, Switch, Route } from "react-router-dom";
 function Nav() {
   return (
     <body class="hold-transition sidebar-mini layout-fixed">
-    <div>
-      <nav>
+    {/* <div> */}
+      {/* <nav>
         <Link
           className="bg-gray-700 inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-300 font-semibold"
-          to="/home"
+          to="/cfregister"
         >
           CF Details
         </Link>
@@ -36,12 +36,12 @@ function Nav() {
         >
           All Problems
         </Link>
-        {/* <Link
+        <Link
           className="bg-gray-700 inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-300 font-semibold"
-          to="/bookmark"
+          to="/home"
         >
-          BookMark
-        </Link> */}
+          Home
+        </Link>
         <Link
           className="bg-gray-700 inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-300 font-semibold"
           to="/discuss"
@@ -64,9 +64,11 @@ function Nav() {
         }
       `}</style>
     </div>
-    
+     */}
     <div class="wrapper">
+     {/* <div>CODEPRAXIS</div> */}
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
@@ -75,7 +77,10 @@ function Nav() {
           <Link to="/home" class="nav-link">Home</Link>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link">Logout</a>
+          <Link to="/dashboard" class="nav-link">Dashboard</Link>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <Link to="/signup" class="nav-link">Logout</Link>
         </li>
       </ul>
       <form class="form-inline ml-3">

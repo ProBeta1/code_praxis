@@ -21,30 +21,6 @@ function ProblemSet(props) {
   return (
     <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-    {/* <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <Link to="/home" class="nav-link">Home</Link>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link">Logout</a>
-        </li>
-      </ul>
-      <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search"></input>
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-      </form>
-    </nav> */}
-
     <aside class="main-sidebar sidebar-dark-primary elevation-4"> */}
       
       <Link to="/home" class="brand-link">
@@ -123,12 +99,12 @@ function ProblemSet(props) {
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard</h1>
+            <h1 class="m-0 text-dark">ProblemSet</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+              <li class="breadcrumb-item active">Problem Set</li>
             </ol>
           </div>
         </div>
@@ -137,62 +113,66 @@ function ProblemSet(props) {
     <div className="bg-gray-600">
       <h2 className="flex text-4xl text-gray-200 justify-center font-extrabold tracking-wider">Problem Set {problemSetNumber}</h2>
       <div className="flex flex-wrap justify-center ">
-        <TaggedContentCard
+        <Link to="/dpproblemset"><TaggedContentCard
           href={"https://codeforces.com/problemset/problem/1365/G"}
-          title={"G. Secure Password"}
+          title={"Dynamic Programming"}
           thumbnail={one}
           description={"Ayush devised yet another scheme to set the password of his lock."}
           tags={["dp", "adhoc","medium"]}
-        />
-        <TaggedContentCard
+        /></Link>
+        <Link to="/datastructuresset"><TaggedContentCard
           href={"https://codeforces.com/problemset/problem/1365/G"}
-          title={"F. Swaps Again "}
+          title={"Data Structures"}
           thumbnail={two}
           description={"Ayush, Ashish and Vivek are busy preparing a new problem for the next Codeforces round ."}
-          tags={["hard", "greedy"]}
-        />
-        <TaggedContentCard
+          tags={["hard", "data structures"]}
+        /></Link>
+        <Link to="/stringsproblemset"><TaggedContentCard
           href={"https://codeforces.com/problemset/problem/1365/G"}
-          title={"haha"}
+          title={"Strings"}
           thumbnail={three}
           description={"pr kyun"}
-          tags={["lol", "wow"]}
-        />
-        <TaggedContentCard
+          tags={["strings"]}
+        /></Link>
+        <Link to="/datastructuresset"><TaggedContentCard
           href={"https://codeforces.com/problemset/problem/1365/G"}
-          title={"haha"}
+          title={"Greedy"}
           thumbnail={four}
           description={"pr kyun"}
-          tags={["lol", "wow"]}
-        />
-        <TaggedContentCard
+          tags={["greedy"]}
+        /></Link>
+        <Link to="/datastructuresset"><TaggedContentCard
           href={"https://codeforces.com/problemset/problem/1365/G"}
-          title={"haha"}
+          title={"Hashing"}
           thumbnail={two}
           description={"pr kyun"}
-          tags={["lol", "wow"]}
-        />
-        <TaggedContentCard
+          tags={["hashing"]}
+        /></Link>
+        <Link to="/datastructuresset"><TaggedContentCard
           href={"https://codeforces.com/problemset/problem/1365/G"}
-          title={"haha"}
+          title={"Implementation"}
           thumbnail={two}
           description={"pr kyun"}
-          tags={["lol", "wow"]}
-        />
-        <TaggedContentCard
+          tags={["implementation"]}
+        /></Link>
+        <Link to="/datastructuresset"><TaggedContentCard
           href={"https://codeforces.com/problemset/problem/1365/G"}
-          title={"haha"}
+          title={"Sortings"}
           thumbnail={two}
           description={"pr kyun"}
-          tags={["lol", "wow"]}
-        />
-        <TaggedContentCard
+          tags={["sortings"]}
+        /></Link>
+        <Link to="/datastructuresset"><TaggedContentCard
           href={"https://codeforces.com/problemset/problem/1365/G"}
-          title={"haha"}
+          title={"Games"}
           thumbnail={two}
           description={"pr kyun"}
-          tags={["lol", "wow"]}
-        />
+          tags={["games"]}
+        /></Link>
+        
+      </div>
+      <div class="row" style={{paddingLeft: 500, paddingTop: 50, paddingBottom: 50}}>
+        <button class="btn btn-lg btn-warning inline-block border-l border-t border-r rounded-t py-3 px-10">More Categories</button>
       </div>
     </div>
     </div>

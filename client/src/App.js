@@ -14,7 +14,10 @@ import Nav from "./components/Nav";
 import UserDetail from "./pages/UserDetail";
 import AllProblems from "./pages/AllProblems";
 import ProblemSet from "./pages/ProblemSet";
-import Bookmark from "./pages/Bookmark";
+import Home from "./pages/Home";
+import Dpproblemset from "./pages/dpproblemset";
+import Stringsproblemset from "./pages/stringsproblemset";
+import Datastructuresset from "./pages/datastructuresset";
 import { withRouter } from "react-router-dom";
 
 function App() {
@@ -38,6 +41,11 @@ function App() {
       <div>
         {location.pathname !== "/" && <Nav />}
         <Switch>
+        <PublicRoute
+            path="/home"
+            authenticated={false}
+            component={Home}
+          ></PublicRoute>
           <PrivateRoute
             path="/cfregister"
             authenticated={authenticated}
@@ -63,21 +71,40 @@ function App() {
             authenticated={authenticated}
             component={ProblemSet}
           ></PrivateRoute>
-          <PrivateRoute
+          {/* <PrivateRoute
             path="/bookmark"
             authenticated={authenticated}
             component={Bookmark}
-          ></PrivateRoute>
+          ></PrivateRoute> */}
           <PrivateRoute
             path="/discuss"
             authenticated={authenticated}
             component={Discuss}
           ></PrivateRoute>
-
+          <PublicRoute
+            path="/signup"
+            authenticated={false}
+            component={Signup}
+          ></PublicRoute>
+          <PrivateRoute
+            path="/dpproblemset"
+            authenticated={authenticated}
+            component={Dpproblemset}
+          ></PrivateRoute>
+          <PrivateRoute
+            path="/datastructuresset"
+            authenticated={authenticated}
+            component={Datastructuresset}
+          ></PrivateRoute>
+          <PrivateRoute
+            path="/stringsproblemset"
+            authenticated={authenticated}
+            component={Stringsproblemset}
+          ></PrivateRoute>
           <PublicRoute
             path="/"
-            authenticated={authenticated}
-            component={Signup}
+            authenticated={false}
+            component={Home}
           ></PublicRoute>
         </Switch>
       </div>
@@ -114,7 +141,7 @@ function PublicRoute({ component: Component, authenticated, ...rest }) {
         authenticated === false ? (
           <Component {...props} />
         ) : (
-          <Redirect to="/cfregister" />
+          <Redirect to="/signup" />
         )
       }
     />

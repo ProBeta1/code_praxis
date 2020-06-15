@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import { Link, Switch, Route } from "react-router-dom";
-import problemService from "../services/problemService";
+import dsService from "../services/dsService";
 import '../assets/icheck-bootstrap.min.css';
 import '../assets/fontawesome-free/css/all.min.css';
 import '../assets/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css';
@@ -10,25 +10,28 @@ import '../assets/daterangepicker/daterangepicker.css';
 import '../assets/summernote/summernote-bs4.css';
 import '../assets/dist/css/adminlte.min.css';
 
-function AllProblems() {
-  const [problems, setProblems] = useState(null);
+function Dpproblemset() {
+  const [data_structures, setdata_structures] = useState(null);
 
-  const getProblems = async () => {
-    let res = await problemService.getAll();
-    setProblems(res);
+  const getdsProblems = async () => {
+    let res = await dsService.getAll();
+    setdata_structures(res);
   }
 
   useEffect( ()=>{
-      if(!problems)
-      getProblems();   
+      if(!data_structures)
+      getdsProblems();   
   },[])
+  
 
-
-  const renderProblem = problem => {
+  const renderdsProblem = dsproblem => {
     return (
       <tr>
-       <td>{problem.name}</td>
-       <a href={problem.url}><td>{problem.url}</td></a>
+       <td>{dsproblem.name}</td>
+       <td>{dsproblem.index}</td>
+       <a href="https://codeforces.com/problemset/problem/1365/G"><td>Solve</td></a>
+       {/* <td>{dpproblem.contestId}</td> */}
+       {/* <a href="https://codeforces.com/problemset/problem/${dpproblem.contestId}/${dpproblem.index}"><td>Solve</td></a> */}
      </tr>
     );
   };
@@ -138,12 +141,12 @@ function AllProblems() {
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">All Problems</h1>
+            <h1 class="m-0 text-dark">Data Structures Questions</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">All Problems</li>
+              <li class="breadcrumb-item active">Data Structures Questions</li>
             </ol>
           </div>
         </div>
@@ -173,12 +176,13 @@ function AllProblems() {
                   <thead>
                     <tr>
                       <th>Problem Name</th>
-                      <th>Problem URL</th>
+                      <th>Problem Index</th>
+                      <th>Problem Link</th>
                     </tr>
                   </thead>
                   <tbody>
-                  {(problems && problems.length > 0) ? (
-                   problems.map(problem => renderProblem(problem)))
+                  {(data_structures && data_structures.length > 0) ? (
+                   data_structures.map(dsproblem => renderdsProblem(dsproblem)))
                    : (
                    <p>No problems found</p>
                      )}
@@ -208,4 +212,4 @@ function AllProblems() {
   )
 }
 
-export default AllProblems
+export default Dpproblemset

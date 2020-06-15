@@ -10,6 +10,7 @@ import '../assets/overlayScrollbars/css/OverlayScrollbars.min.css';
 import '../assets/daterangepicker/daterangepicker.css';
 import '../assets/summernote/summernote-bs4.css';
 import '../assets/dist/css/adminlte.min.css';
+import '../assets/adminlte.min.css';
 
 function Discuss() {
   const [user, setUser] = useState(auth().currentUser);
@@ -163,19 +164,111 @@ function Discuss() {
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+              <li class="breadcrumb-item active">Discuss</li>
             </ol>
           </div>
         </div>
       </div>
     </div>
     <div>
-      <h2 className="bg-red-500 text-3xl text-gray-200 font-mono mx-10 p-5 rounded-lg flex justify-center">
+      {/* <h2 className="bg-red-500 text-3xl text-gray-200 font-mono mx-10 p-5 rounded-lg flex justify-center">
         WELCOME TO Discuss <br></br> Post all your CP queries here , and help out your
         buddies !
-      </h2>
+      </h2> */}
 
-      <div className="bg-green-200 m-3">
+      <div class="col-md-9" style={{paddingLeft: 80}}>
+        <div class="box box-primary">
+          <div class="box-header with-border">
+            <h1 class="box-title">POST QUERIES</h1>
+            <div class="box-tools pull-right">
+              <div class="has-feedback">
+              </div>
+            </div>
+          </div>
+          <div class="box-body np-padding">
+            <div class="mailbox-controls">
+              {/* <button type="button" class="btn btn-default btn-sm checkbox-toggle">
+                <i class="fa fa-square-o"></i>
+              </button>
+              <button type="button" class="btn btn-default btn-sm">
+                <i class="fa fa-refresh"></i>
+              </button> */}
+              <div class="pull-right">
+                1-1/1
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default btn-sm">
+                    <i class="fa fa-chevron-left"></i>
+                  </button>
+                  <button type="button" class="btn btn-default btn-sm">
+                    <i class="fa fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="table-responsive mailbox-messages">
+              <table class="table table-hover table-striped">
+                <tbody>
+                  {chats.map((chat) => {
+                    return(
+                  <tr>
+                    {/* <td>
+                      <div class="icheckbox_flat-blue hover" aria-checked="true" aria-disabled="false">
+                        <input type="checkbox" style={{ opacity: 0}}></input>
+                        <ins class="iCheck-helper" style={{ top: 0, left: 0, width: 600, height: 800, margin: 0, padding: 0, border: 0, opacity: 0}}></ins>
+                      </div>
+                    </td> */}
+                    <td class="mailbox-star">
+                      <a href="#">
+                        <i class="fa fa-star text-yellow"></i>
+                      </a>
+                    </td>
+                    <td class="mailbox-name">
+                      <a href="#">{chat.email}</a>
+                    </td>
+                    <td class="mailbox-subject">
+                      {/* <b>new</b>Message displayed */}
+                      <b></b>{chat.content}
+                    </td>
+                    <td class="mailbox-date" key={chat.timestamp}>
+                      {/* 1 min ago */}
+                    </td>
+                  </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="box-footer no-padding" style={{paddingTop: 20}}>
+            <div>
+            <div class="pull-right" style={{paddingLeft: 600}}>
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text-area"
+                  className="border-blue-600 border-2"
+                  value={content}
+                  onChange={handleChange}
+                ></input>
+                {writeError ? <p>{writeError}</p> : null}
+                <button
+                  type="button" class="btn btn-warning btn-lg inline-block border-l bi=order-r border-t"
+                >
+                Send
+                </button>
+                <div>
+                  LoggedIn as: <strong>{user.email}</strong>
+                </div>
+                
+              </form>
+              </div>
+              
+                {/* <button type="button" class="btn btn-default btn-sm">Send</button> */}
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <div className="bg-green-200 m-3">
         {chats.map((chat) => {
           return (
             <p className="flex justify-start mx-20 p-2 " key={chat.timestamp}>
@@ -186,9 +279,9 @@ function Discuss() {
             </p>
           );
         })}
-      </div>
+      </div> */}
 
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center">
         <form onSubmit={handleSubmit}>
           <input
             className="border-blue-600 border-2"
@@ -206,7 +299,7 @@ function Discuss() {
         <div>
           LoggedIn as: <strong>{user.email}</strong>
         </div>
-      </div>
+      </div> */}
     </div>
     </div>
     </div>
