@@ -39,6 +39,7 @@ require("./models/string_suffix_structures");
 require("./models/ternary_search");
 require("./models/trees");
 require("./models/two_pointers");
+require("./models/questions");
 
 const app = express();
 
@@ -56,6 +57,7 @@ require("./routes/hashingRoutes")(app);
 require("./routes/stringsRoutes")(app);
 require("./routes/satRoutes")(app);
 require("./routes/userRoutes")(app);
+require("./routes/questionsRoutes")(app);
 
 
 //production env config
