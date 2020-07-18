@@ -388,7 +388,11 @@ function UserDetail() {
                 </div>
                 <div class="card-footer clearfix">
                   <button type="button" class="btn btn-info float-right">
-                    <i class="fas fa-plus"></i> Add item
+                  <Link to="/stats" class="nav-link">
+                    <p>
+                      Progress Report
+                    </p>
+                  </Link>
                   </button>
                 </div>
               </div>
@@ -396,10 +400,10 @@ function UserDetail() {
           </div>
         </div>
       </div>
-
+{/* 
       <div className=" bg-gray-200 m-5 p-10 ">
         <Heatmap xLabels={xLabels} yLabels={yLabels} data={data} squares />
-      </div>
+      </div> */}
     </body>
 
   );

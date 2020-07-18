@@ -122,7 +122,8 @@ const Stats = () => {
   }, []);
 
   return (
-    <div>
+    <div className="bg-gray-600">
+      <h2 className="text-5xl flex justify-center">Your Performance Details</h2>
       <SubmissionPieChart ac={AC} wa={WA} tle={TLE} mle={MLE} />
       <TagPieChart dp={dp} greedy={greedy} math={math} ip={implementation} dfs={dfs} games={games} bf={bf} />
     </div>

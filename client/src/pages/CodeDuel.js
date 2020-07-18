@@ -1,22 +1,23 @@
 import React, { useState } from "react";
-import DuelCoder from "../components/DuelCoder";
+
+let homeStyle = {
+  width: "100vw",
+  height: "100vh",
+  backgroundImage: "url(" + "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2016/07/17/482606-global-winners-borys-minaiev-and-gennady-korotkevich.png" + ")",
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat'
+};
 
 function CodeDuel() {
-  const [duelWinner, setDuelWinner] = useState("TBA");
+
+
   return (
-    <div className="bg-gray-600  h-screen">
+    <div className="bg-gray-600  h-screen flex justify-center items-center" style={ homeStyle}>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold flex justify-center w-64 h-32 items-center rounded" >
+        <a href="https://code-dual.netlify.app/" target="_blank">Click Here to give it a shot</a>
+      </button>
 
-    <div className="flex justify-center mx-40 bg-red-200  p-2 text-5xl text-teal-400 font-mono">CODE DUEL</div>
-
-      <div className="flex flex-row justify-center">
-        <DuelCoder id={1} />
-        <DuelCoder id={2} />
-      </div>
-
-      <div className="flex flex-wrap justify-center bg-gray-400  rounded-lg p-10 mx-40 text-4xl text-green-600">
-        And the Winner is 
-        <h3 className="mx-10 text-orange-500"> {duelWinner}</h3>
-      </div>
     </div>
   );
 }

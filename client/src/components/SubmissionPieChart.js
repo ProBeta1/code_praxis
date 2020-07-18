@@ -18,16 +18,16 @@ const SubmissionPieChart = (props) => {
   }, [props.ac,props.wa]);
 
   return (
-    <div style={{width:500, height:500, padding:40}}>
+    <div style={{width:500, height:500, padding:40 , marginLeft:'35%'}}>
       <VictoryPie
         innerRadius={({ datum }) => datum.y * 5}
         animate={{
-          duration: 100,
+          duration: 5000,
         }}
-        colorScale={["tomato", "orange", "gold", "cyan", "navy"]}
+        colorScale={["#90EE90", "tomato", "orange", "gold", "cyan", "navy"]}
         data={data}
         theme={VictoryTheme.material}
-        // style={{ labels: { fill: "white", fontSize: 28, fontWeight: "bold" } }}
+        style={{ labels: {fill:"white", fontSize: 20, fontWeight: "bold" } }}
       />
     </div>
   );

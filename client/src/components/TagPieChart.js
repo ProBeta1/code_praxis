@@ -22,16 +22,16 @@ const TagPieChart = (props) => {
   }, [props.dp, props.greedy]);
 
   return (
-    <div style={{width:500, height:500, padding:40}}>
+    <div style={{width:500, height:500, padding:40, marginLeft:'35%'}}>
       <VictoryPie
-        innerRadius={20}
+        innerRadius={50}
         animate={{
-          duration: 100,
+          duration: 3000,
         }}
-        colorScale={["tomato", "orange", "gold", "cyan", "navy", "red","violet"]}
+        colorScale={["tomato", "#90EE90", "gold", "cyan", "navy", "red","violet"]}
         data={data}
         theme={VictoryTheme.material}
-        // style={{ labels: { fill: "white", fontSize: 28, fontWeight: "bold" } }}
+        style={{ labels: { fill:"white", fontSize: 12, fontWeight: "bold" } }}
       />
     </div>
   );

@@ -19,6 +19,7 @@ import Dpproblemset from "./pages/dpproblemset";
 import Stringsproblemset from "./pages/stringsproblemset";
 import Datastructuresset from "./pages/datastructuresset";
 import { withRouter } from "react-router-dom";
+import Stats from "./pages/Stats";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -55,6 +56,11 @@ function App() {
             path="/duel"
             authenticated={authenticated}
             component={CodeDuel}
+          ></PrivateRoute>
+          <PrivateRoute
+            path="/stats"
+            authenticated={authenticated}
+            component={Stats}
           ></PrivateRoute>
           <PrivateRoute
             path="/dashboard"
