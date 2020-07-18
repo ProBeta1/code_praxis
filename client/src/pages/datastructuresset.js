@@ -183,6 +183,7 @@ function Dpproblemset() {
                       <tr>
                         <th>Problem Name</th>
                         <th>Problem Index</th>
+                        <th>Problem Rating</th>
                         <th>Problem Link</th>
                       </tr>
                     </thead>
