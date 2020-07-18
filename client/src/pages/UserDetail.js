@@ -83,34 +83,6 @@ function UserDetail() {
   return (
     <body class="hold-transition sidebar-mini layout-fixed">
       <div class="wrapper">
-        {/* Name:{name}
-    Rating:{rating}
-    Rank:{rank}
-    maxRating:{maxRating}
-    maxRank:{maxRank} */}
-        {/* <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <Link to="/home" class="nav-link">Home</Link>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link">Logout</a>
-        </li>
-      </ul>
-      <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search"></input>
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-      </form>
-    </nav> */}
 
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
           <Link to="/home" class="brand-link">
@@ -126,7 +98,7 @@ function UserDetail() {
                     src={avatar}
                     class="img-circle elevation-2"
                     alt="image"
-                    style={{ width: 180, height: 180, padding: 10 }}
+                    style={{ width: "auto", height: 80, padding: 10 }}
                   ></img>
                 </div>
                 <Link
@@ -424,21 +396,12 @@ function UserDetail() {
           </div>
         </div>
       </div>
-    </body>
-    // <div className="bg-gray-600">
-    //   Name:{name}
-    //   Rating:{rating}
-    //   Rank:{rank}
-    //   maxRating:{maxRating}
-    //   maxRank:{maxRank}
-    //     <div className="">
-    //       <img src={avatar} alt="image" />
-    //     </div>
 
-    //   <div className=" bg-gray-200 m-5 p-10 ">
-    //     <Heatmap xLabels={xLabels} yLabels={yLabels} data={data} squares />
-    //   </div>
-    // </div>
+      <div className=" bg-gray-200 m-5 p-10 ">
+        <Heatmap xLabels={xLabels} yLabels={yLabels} data={data} squares />
+      </div>
+    </body>
+
   );
 }
 
