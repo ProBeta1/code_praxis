@@ -41,6 +41,8 @@ require("./models/trees");
 require("./models/two_pointers");
 require("./models/questions");
 
+require("./models/upsolve");
+
 const app = express();
 
 mongoose.Promise = global.Promise;
@@ -58,6 +60,8 @@ require("./routes/stringsRoutes")(app);
 require("./routes/satRoutes")(app);
 require("./routes/userRoutes")(app);
 require("./routes/questionsRoutes")(app);
+
+require("./routes/upsolveRoutes")(app);
 
 
 //production env config
