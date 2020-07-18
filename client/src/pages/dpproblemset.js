@@ -11,7 +11,7 @@ import "../assets/summernote/summernote-bs4.css";
 import "../assets/dist/css/adminlte.min.css";
 
 function Dpproblemset(props) {
-  const {serviceType} = props.serviceType;
+  // const {serviceType} = props.serviceType;
   const [dp, setdp] = useState(null);
 
   const getdpProblems = async () => {
@@ -27,10 +27,10 @@ function Dpproblemset(props) {
     const genLink = `https://codeforces.com/problemset/problem/${dpproblem.contestId}/${dpproblem.index}`;
     return (
       <tr>
-        {" "}
+        {/* {" "}
         <a href="https://codeforces.com/problemset/problem/${dpproblem.contestId}/${dpproblem.index}">
-          <td>Solve</td>
-        </a>
+          {/* <td>Solve</td> */}
+        {/* </a>  */}
         <td>{dpproblem.name}</td>
         <td>{dpproblem.index}</td>
         {/* <a href="https://codeforces.com/problemset/problem/1365/G"><td>Solve</td></a> */}
@@ -187,6 +187,7 @@ function Dpproblemset(props) {
                       <tr>
                         <th>Problem Name</th>
                         <th>Problem Index</th>
+                        <th>Problem Rating</th>
                         <th>Problem Link</th>
                       </tr>
                     </thead>
